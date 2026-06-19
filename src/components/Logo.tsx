@@ -12,7 +12,7 @@ export default function Logo({ size = 48, color = '#ffffff', animated = false, c
     <svg
       width={size}
       height={size}
-      viewBox="0 0 90 90"
+      viewBox="-5 -5 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={`${animated ? 'logo-float' : ''} ${className}`}
