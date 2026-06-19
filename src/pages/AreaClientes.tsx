@@ -40,7 +40,7 @@ export default function AreaClientes() {
 
           {/* Bamboo Energy */}
           <a
-            href="https://bambooenergy.com"
+            href="https://bambooenergy.tech/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white/5 border border-white/15 rounded-3xl p-10 flex flex-col items-center text-center hover:bg-white/10 hover:border-[#4dbb6b]/40 transition-all duration-300 group"
@@ -55,7 +55,7 @@ export default function AreaClientes() {
             <span className="inline-block w-full py-3.5 bg-white/10 border border-white/20 text-white font-bold rounded-xl text-sm group-hover:bg-[#4dbb6b] group-hover:border-[#4dbb6b] transition-all duration-200">
               Ir al portal →
             </span>
-            <p className="text-white/30 text-xs mt-3">bambooenergy.com</p>
+            <p className="text-white/30 text-xs mt-3">bambooenergy.tech</p>
           </a>
         </div>
 
