@@ -63,7 +63,13 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-white/40">
           <span>© {new Date().getFullYear()} Calaf Consulting. Todos los derechos reservados.</span>
-          <span>Consultoría energética especializada</span>
+          <div className="flex items-center gap-4">
+            <Link to="/politica-de-privacidad" className="hover:text-[#4dbb6b] transition-colors">
+              Política de Privacidad
+            </Link>
+            <span className="text-white/20">·</span>
+            <span>Consultoría energética especializada</span>
+          </div>
         </div>
       </div>
     </footer>

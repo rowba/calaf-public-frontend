@@ -8,6 +8,7 @@ import Nosotros from './pages/Nosotros'
 import Blog from './pages/Blog'
 import Contacto from './pages/Contacto'
 import AreaClientes from './pages/AreaClientes'
+import PoliticaPrivacidad from './pages/PoliticaPrivacidad'
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/area-clientes" element={<AreaClientes />} />
+          <Route path="/politica-de-privacidad" element={<PoliticaPrivacidad />} />
         </Routes>
       </main>
       <Footer />

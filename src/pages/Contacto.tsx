@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import useReveal from '../hooks/useReveal'
 
 export default function Contacto() {
@@ -6,6 +7,7 @@ export default function Contacto() {
   useEffect(() => { window.scrollTo(0, 0) }, [])
 
   const [sent, setSent] = useState(false)
+  const [privacidad, setPrivacidad] = useState(false)
   const [form, setForm] = useState({ nombre: '', empresa: '', telefono: '', email: '', mensaje: '' })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -14,6 +16,7 @@ export default function Contacto() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    if (!privacidad) return
     // TODO: connect to form backend (Formspree / EmailJS / API)
     setSent(true)
   }
@@ -165,16 +168,35 @@ export default function Contacto() {
                   />
                 </div>
 
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="privacidad"
+                    checked={privacidad}
+                    onChange={(e) => setPrivacidad(e.target.checked)}
+                    className="mt-0.5 w-4 h-4 accent-[#4dbb6b] flex-shrink-0 cursor-pointer"
+                    required
+                  />
+                  <label htmlFor="privacidad" className="text-xs text-[#64748b] leading-relaxed cursor-pointer">
+                    He leído y acepto la{' '}
+                    <Link to="/politica-de-privacidad" className="text-[#4dbb6b] underline hover:text-[#38a056]" target="_blank">
+                      Política de Privacidad
+                    </Link>
+                    . Autorizo el tratamiento de mis datos para gestionar mi consulta conforme al RGPD.
+                  </label>
+                </div>
+
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#1a2d42] text-white font-bold rounded-xl text-base hover:bg-[#4dbb6b] transition-all duration-300 hover:shadow-lg hover:shadow-[#4dbb6b]/30"
+                  disabled={!privacidad}
+                  className={`w-full py-4 font-bold rounded-xl text-base transition-all duration-300 ${
+                    privacidad
+                      ? 'bg-[#1a2d42] text-white hover:bg-[#4dbb6b] hover:shadow-lg hover:shadow-[#4dbb6b]/30'
+                      : 'bg-[#e2e8f0] text-[#94a3b8] cursor-not-allowed'
+                  }`}
                 >
                   Enviar mensaje →
                 </button>
-
-                <p className="text-center text-xs text-[#94a3b8]">
-                  Tus datos no serán cedidos a terceros. Prometido.
-                </p>
               </form>
             )}
           </div>
